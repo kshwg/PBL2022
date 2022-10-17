@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_application_2/auth.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../flutter_flow/flutter_flow_theme.dart';
 
 class HomePage extends StatefulWidget {
 
@@ -81,8 +82,10 @@ class _HomePageState extends State<HomePage> {
                           padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
-                            children: <Widget>[
-                              _userUid(),
+                            children: [
+                              Text(user?.email??'ID WARGA',
+                                style: FlutterFlowTheme.of(context).title1,
+                              ),
                             ],
                           ),
                         ),
@@ -92,7 +95,9 @@ class _HomePageState extends State<HomePage> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Text(
-                                'Selamat Datang!'
+                                'Selamat Datang!',
+                                style: FlutterFlowTheme.of(context)
+                                  .subtitle1,
                               ),
                             ],
                           ),
@@ -117,6 +122,12 @@ class _HomePageState extends State<HomePage> {
                         child: Text(
                           'Kabar Sekitar Anda',
                           textAlign: TextAlign.start,
+                          style: FlutterFlowTheme.of(context)
+                          .title3
+                          .override(
+                            fontFamily:'Outfit',
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
                       Padding(
@@ -137,6 +148,8 @@ class _HomePageState extends State<HomePage> {
                                 child: Text(
                                   'Informasi',
                                   textAlign: TextAlign.start,
+                                  style:  FlutterFlowTheme.of(context)
+                                    .subtitle2,
                                 ),
                               )
                             ],
@@ -189,13 +202,13 @@ class _HomePageState extends State<HomePage> {
                         ),
                         Text(
                           'Laporan Keuangan',
-                          /*style: FlutterFlowTheme.of(context)
+                          style: FlutterFlowTheme.of(context)
                           .bodyText2
                           .override(
                             fontFamily: 'Outfit',
                             color: Colors.white,
                             fontWeight: FontWeight.normal,
-                          ),*/
+                          ),
                         ),
                       ],
                     ),
@@ -214,6 +227,126 @@ class _HomePageState extends State<HomePage> {
                       )
                     ],
                     borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(12, 8, 12, 8),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Padding(
+                          padding:
+                            EdgeInsetsDirectional.fromSTEB(0, 0, 0, 12),
+                          child: FaIcon(
+                            FontAwesomeIcons.penToSquare,
+                            color: Colors.white,
+                            size: 44,
+                          ),
+                        ),
+                        Text(
+                          'Administrasi',
+                          style: FlutterFlowTheme.of(context)
+                          .bodyText2
+                          .override(
+                            fontFamily: 'Outfit',
+                            color: Colors.white,
+                            fontWeight: FontWeight.normal,
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+                ),
+                Container(
+                  width: 160,
+                  height:100,
+                  decoration: BoxDecoration(
+                    color: Color(0xFFB01A1A),
+                    boxShadow: [
+                      BoxShadow(
+                        blurRadius: 3,
+                        color: Color(0x33000000),
+                        offset: Offset(0, 1),
+                      )
+                    ],
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(12, 8, 12, 8),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Padding(
+                          padding:
+                          EdgeInsetsDirectional.fromSTEB(0, 0, 0, 12),
+                          child: Icon(
+                            Icons.warning_rounded,
+                            color: Color(0xFFFFFFFF),
+                            size: 44,
+                          ),
+                        ),
+                        Text(
+                          'Aduan',
+                          style: FlutterFlowTheme.of(context)
+                          .bodyText2
+                          .override(
+                            fontFamily: 'Outfit',
+                            color: FlutterFlowTheme.of(context)
+                              .secondaryBackground,
+                            fontWeight: FontWeight.normal,
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+                ),
+                Container(
+                  width: 160,
+                  height: 100,
+                  decoration: BoxDecoration(
+                    color: FlutterFlowTheme.of(context).primaryText,
+                    boxShadow: [
+                      BoxShadow(
+                        blurRadius: 3,
+                        color: Color(0x33000000),
+                        offset: Offset(0, 1),
+                      )
+                    ],
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(12, 8, 12, 8),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Padding(
+                          padding:
+                            EdgeInsetsDirectional.fromSTEB(0, 0, 0, 12),
+                          child: Icon(
+                            Icons.map_rounded,
+                            color: FlutterFlowTheme.of(context)
+                              .secondaryBackground,
+                            size: 44,
+                          ),
+                        ),
+                        Text(
+                          'Denah Perumahan',
+                          style: FlutterFlowTheme.of(context)
+                              .bodyText2
+                              .override(
+                            fontFamily: 'Outfit',
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            fontWeight: FontWeight.normal,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 )
               ],

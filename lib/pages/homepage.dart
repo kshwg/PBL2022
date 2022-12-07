@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_application_2/auth.dart';
+import 'package:flutter_application_2/pages/denah_widget.dart';
+import './administrasi_widget.dart';
+import './aduanwarga_widget.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
@@ -214,141 +217,175 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 ),
-                Container(
-                  width: 160,
-                  height: 100,
-                  decoration: BoxDecoration(
-                    color: Color(0xFF4B39EF),
-                    boxShadow: [
-                      BoxShadow(
-                        blurRadius: 3,
-                        color: Color(0x33000000),
-                        offset: Offset(0,1),
-                      )
-                    ],
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(12, 8, 12, 8),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Padding(
-                          padding:
-                            EdgeInsetsDirectional.fromSTEB(0, 0, 0, 12),
-                          child: FaIcon(
-                            FontAwesomeIcons.penToSquare,
-                            color: Colors.white,
-                            size: 44,
-                          ),
-                        ),
-                        Text(
-                          'Administrasi',
-                          style: FlutterFlowTheme.of(context)
-                          .bodyText2
-                          .override(
-                            fontFamily: 'Outfit',
-                            color: Colors.white,
-                            fontWeight: FontWeight.normal,
-                          ),
-                        ),
+                InkWell(
+                  onTap: () async {
+                    await Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => AdministrasiWidget(),
+                      ),
+                    );
+                  },
+                  child: Container(
+                    width: 160,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      color: Color(0xFF4B39EF),
+                      boxShadow: [
+                        BoxShadow(
+                          blurRadius: 3,
+                          color: Color(0x33000000),
+                          offset: Offset(0, 1),
+                        )
                       ],
+                      borderRadius: BorderRadius.circular(12),
                     ),
-                  )
+                    child: Padding(
+                      padding:
+                      EdgeInsetsDirectional.fromSTEB(12, 8, 12, 8),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0, 0, 0, 12),
+                            child: FaIcon(
+                              FontAwesomeIcons.edit,
+                              color: Colors.white,
+                              size: 44,
+                            ),
+                          ),
+                          Text(
+                            'Administrasi',
+                            style: FlutterFlowTheme.of(context)
+                                .bodyText2
+                                .override(
+                              fontFamily: 'Outfit',
+                              color: Colors.white,
+                              fontWeight: FontWeight.normal,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
                 ),
-                Container(
-                  width: 160,
-                  height:100,
-                  decoration: BoxDecoration(
-                    color: Color(0xFFB01A1A),
-                    boxShadow: [
-                      BoxShadow(
-                        blurRadius: 3,
-                        color: Color(0x33000000),
-                        offset: Offset(0, 1),
-                      )
-                    ],
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(12, 8, 12, 8),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Padding(
-                          padding:
-                          EdgeInsetsDirectional.fromSTEB(0, 0, 0, 12),
-                          child: Icon(
-                            Icons.warning_rounded,
-                            color: Color(0xFFFFFFFF),
-                            size: 44,
-                          ),
-                        ),
-                        Text(
-                          'Aduan',
-                          style: FlutterFlowTheme.of(context)
-                          .bodyText2
-                          .override(
-                            fontFamily: 'Outfit',
-                            color: FlutterFlowTheme.of(context)
-                              .secondaryBackground,
-                            fontWeight: FontWeight.normal,
-                          ),
-                        ),
+                InkWell(
+                  onTap: () async {
+                    await Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => AduanwargaWidget(),
+                      ),
+                    );
+                  },
+                  child: Container(
+                    width: 160,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      color: Color(0xFFB01A1A),
+                      boxShadow: [
+                        BoxShadow(
+                          blurRadius: 3,
+                          color: Color(0x33000000),
+                          offset: Offset(0, 1),
+                        )
                       ],
+                      borderRadius: BorderRadius.circular(12),
                     ),
-                  )
+                    child: Padding(
+                      padding:
+                      EdgeInsetsDirectional.fromSTEB(12, 8, 12, 8),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0, 0, 0, 12),
+                            child: Icon(
+                              Icons.warning_rounded,
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                              size: 44,
+                            ),
+                          ),
+                          Text(
+                            'Aduan',
+                            style: FlutterFlowTheme.of(context)
+                                .bodyText2
+                                .override(
+                              fontFamily: 'Outfit',
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                              fontWeight: FontWeight.normal,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
                 ),
-                Container(
-                  width: 160,
-                  height: 100,
-                  decoration: BoxDecoration(
-                    color: FlutterFlowTheme.of(context).primaryText,
-                    boxShadow: [
-                      BoxShadow(
-                        blurRadius: 3,
-                        color: Color(0x33000000),
-                        offset: Offset(0, 1),
-                      )
-                    ],
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(12, 8, 12, 8),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Padding(
-                          padding:
-                            EdgeInsetsDirectional.fromSTEB(0, 0, 0, 12),
-                          child: Icon(
-                            Icons.map_rounded,
-                            color: FlutterFlowTheme.of(context)
-                              .secondaryBackground,
-                            size: 44,
-                          ),
-                        ),
-                        Text(
-                          'Denah Perumahan',
-                          style: FlutterFlowTheme.of(context)
-                              .bodyText2
-                              .override(
-                            fontFamily: 'Outfit',
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                            fontWeight: FontWeight.normal,
-                          ),
-                        ),
+                InkWell(
+                  onTap: () async {
+                    await Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DenahWidget(),
+                      ),
+                    );
+                  },
+                  child: Container(
+                    width: 160,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      color: FlutterFlowTheme.of(context).primaryText,
+                      boxShadow: [
+                        BoxShadow(
+                          blurRadius: 3,
+                          color: Color(0x33000000),
+                          offset: Offset(0, 1),
+                        )
                       ],
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Padding(
+                      padding:
+                      EdgeInsetsDirectional.fromSTEB(12, 8, 12, 8),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0, 0, 0, 12),
+                            child: Icon(
+                              Icons.map_rounded,
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                              size: 44,
+                            ),
+                          ),
+                          Text(
+                            'Denah Perumahan',
+                            style: FlutterFlowTheme.of(context)
+                                .bodyText2
+                                .override(
+                              fontFamily: 'Outfit',
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                              fontWeight: FontWeight.normal,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-                )
+                ),
               ],
             )
           ],
